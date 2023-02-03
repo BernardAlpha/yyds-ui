@@ -11,7 +11,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "pnpm -C play dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp -f build/gulpfile.ts"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,18 @@
   },
   "homepage": "https://github.com/BernardAlpha/yyds-ui#readme",
   "devDependencies": {
+    "@types/gulp": "^4.0.10",
+    "@types/gulp-autoprefixer": "^0.0.33",
+    "@types/gulp-clean-css": "^4.3.0",
+    "@types/gulp-sass": "^5.0.0",
+    "@types/sass": "^1.43.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "6.0.0-alpha.1",
     "sass": "^1.58.0",
+    "sucrase": "^3.29.0",
     "typescript": "^4.9.4",
     "vue": "^3.2.36"
   },
