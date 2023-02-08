@@ -1,7 +1,14 @@
-import Icon from './src/icon.vue';
+import _Icon from './src/icon.vue';
 import { withInstall } from '@yyds-ui/utils/with-install'
 
-const YIcon = withInstall(Icon);
+const Icon = withInstall(_Icon);
 
-export { YIcon };
-export default YIcon;
+export default Icon;
+
+export * from "./src/icon"
+
+declare module 'vue'{
+  export interface GlobalComponents {
+    YIcon: typeof Icon
+  }
+}

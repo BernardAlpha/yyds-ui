@@ -1,26 +1,30 @@
 <template>
-  <i class="y-icon" :style="style">
+  <i :class="bem.b()" :style="style">
     <slot></slot>
   </i>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from 'vue'
+<script setup lang="ts">
+import { computed } from '@vue/reactivity'
+import { createNamespace } from '@yyds-ui/utils/create';
 import { iconProps } from './icon';
-export default defineComponent({
-  name: 'YIcon',
-  props: iconProps,
-  setup(props) {
-    const style = computed(() => {
-      if (!props.color && !props.size) {
-        return {};
-      }
-      return {
-        ...(props.color ? { 'color': props.color } : {}),
-        ...(props.size ? { 'font-size': props.size + 'px' } : {})
-      }
-    });
-    return {style}
+
+defineOptions({
+  name: 'y-icon'
+});
+
+const bem = createNamespace('icon');
+
+const props = defineProps(iconProps);
+
+const style = computed(() => {
+  if (!props.color && !props.size) {
+    return {};
+  }
+  return {
+    ...(props.color ? { 'color': props.color } : {}),
+    ...(props.size ? { 'font-size': props.size + 'px' } : {})
   }
 })
+
 </script>
