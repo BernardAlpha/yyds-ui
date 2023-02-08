@@ -1,2 +1,6 @@
 // 命名规范
-$namespace: 'y'
+$namespace: 'y';
+$common-separator: '-';
+$element-separator: '__';
+$modifier-separator: '--';
+$state-prefix: 'is-';
