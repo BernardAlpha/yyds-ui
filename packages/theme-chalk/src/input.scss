@@ -1,0 +1,58 @@
+@use 'mixins/mixins.scss' as *;
+
+@include b(input) {
+  width: 100%;
+  color: blue;
+  height: 32px;
+  font-size: 12px;
+  @include e(wrapper) {
+    display: inline-flex;
+    height: 32px;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+  }
+
+  @include e(prefix) {
+    display: inline-flex;
+    min-width: 16px;
+    align-items: center;
+    border: 1px solid #da2;
+  }
+
+  @include e(inner) {
+    display: inline-flex;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+  }
+
+  @include e(suffix) {
+    display: inline-flex;
+    min-width: 16px;
+    align-items: center;
+    border: 1px solid #da2;
+  }
+
+
+}
+
+@include b(input-group) {
+  height: 100%;
+  @include e(prepend) {
+    display: inline-flex;
+    border: 1px solid #da2;
+    align-items: center;
+    height: 32px;
+    vertical-align: top;
+  }
+
+  @include e(append) {
+    display: inline-flex;
+    border: 1px solid #da2;
+    align-items: center;
+    height: 32px;
+    vertical-align: top;
+  }
+}
