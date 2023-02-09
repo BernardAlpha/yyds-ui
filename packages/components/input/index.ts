@@ -1,13 +1,13 @@
-import { withInstall } from "@yyds-ui/utils/with-install";
+import { withInstall } from '@yyds-ui/utils/with-install';
 import _Input from './src/input.vue';
 
 const Input = withInstall(_Input);
 
 export default Input;
-export type { InputProps} from './src/input'
+export type { InputProps } from './src/input';
 
-declare module 'vue'{
+declare module 'vue' {
   export interface GolbalComponent {
-    YInput: typeof Input
+    YInput: typeof Input;
   }
 }

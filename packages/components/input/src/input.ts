@@ -1,5 +1,5 @@
 // 定义input元素属性
-import { ExtractPropTypes, PropType } from "vue";
+import { ExtractPropTypes, PropType } from 'vue';
 import { isString } from '@vue/shared';
 
 export const inputProps = {
@@ -34,8 +34,7 @@ export const inputProps = {
   },
   label: {
     type: String
-  },
-
+  }
 } as const;
 
 export type InputProps = ExtractPropTypes<typeof inputProps>;
