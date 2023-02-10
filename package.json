@@ -11,6 +11,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "pnpm -C play dev",
+    "doc:dev": "pnpm -C docs dev",
     "build": "gulp -f build/gulpfile.ts"
   },
   "repository": {
