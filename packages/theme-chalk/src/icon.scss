@@ -15,83 +15,63 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.#{$namespace}-icon-huiseguanbi:before {
-  content: "\e607";
+.#{$namespace}-icon-switch-button:before {
+  content: "\e61f";
 }
 
-.#{$namespace}-icon-heiseguanbi:before {
-  content: "\e608";
+.#{$namespace}-icon-arrow-up:before {
+  content: "\e620";
 }
 
-.#{$namespace}-icon-heiseshang:before {
-  content: "\e609";
+.#{$namespace}-icon-close:before {
+  content: "\e621";
 }
 
-.#{$namespace}-icon-heisexia:before {
-  content: "\e60a";
+.#{$namespace}-icon-palette:before {
+  content: "\e623";
 }
 
-.#{$namespace}-icon-heiseyou:before {
-  content: "\e60b";
+.#{$namespace}-icon-search:before {
+  content: "\e624";
 }
 
-.#{$namespace}-icon-heisezuo:before {
-  content: "\e60c";
+.#{$namespace}-icon-warning:before {
+  content: "\e625";
 }
 
-.#{$namespace}-icon-huiseshang:before {
-  content: "\e60d";
+.#{$namespace}-icon-user-solid:before {
+  content: "\e626";
 }
 
-.#{$namespace}-icon-huisexia:before {
-  content: "\e60e";
+.#{$namespace}-icon-notification:before {
+  content: "\e627";
 }
 
-.#{$namespace}-icon-huiseyou:before {
-  content: "\e60f";
+.#{$namespace}-icon-success:before {
+  content: "\e628";
 }
 
-.#{$namespace}-icon-huisezuo:before {
-  content: "\e610";
+.#{$namespace}-icon-error:before {
+  content: "\e629";
 }
 
-.#{$namespace}-icon-huisesousuo:before {
-  content: "\e611";
+.#{$namespace}-icon-date:before {
+  content: "\e62a";
 }
 
-.#{$namespace}-icon-heisesousuo:before {
-  content: "\e612";
+.#{$namespace}-icon-arrow-right:before {
+  content: "\e62e";
 }
 
-.#{$namespace}-icon-guanji:before {
-  content: "\e613";
+.#{$namespace}-icon-arrow-down:before {
+  content: "\e630";
 }
 
-.#{$namespace}-icon-lanseguanbi:before {
-  content: "\e614";
+.#{$namespace}-icon-info:before {
+  content: "\e631";
 }
 
-.#{$namespace}-icon-lansesousuo:before {
-  content: "\e615";
-}
-
-.#{$namespace}-icon-lansezuo:before {
-  content: "\e616";
-}
-
-.#{$namespace}-icon-lanseyou:before {
-  content: "\e617";
-}
-
-.#{$namespace}-icon-lanseshang:before {
-  content: "\e618";
-}
-
-.#{$namespace}-icon-lansexia:before {
-  content: "\e619";
-}
-
-.#{$namespace}-icon-xiaoxi:before {
-  content: "\e61a";
+.#{$namespace}-icon-arrow-left:before {
+  content: "\e632";
 }
 
