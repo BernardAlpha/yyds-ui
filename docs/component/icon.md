@@ -2,7 +2,7 @@
 提供了一套常用的图标集合。
 
 ## 使用方法
-直接通过设置类名为 y-icon-iconName 来使用即可。例如：
+直接通过设置类名为 y-icon-name 来使用即可。例如：
 
 <div class="demo demo-icon">
   <y-icon class="y-icon-switch-button"></y-icon>
@@ -23,6 +23,16 @@
     <y-icon :class="`y-icon-${item}`"></y-icon>
     <div class="icon-item-text">{{ `y-icon-${item}` }}</div>
   </div>
+</div>
+
+## Input Props
+<div class="props-table">
+
+| 参数          | 说明        |  类型  |     默认值     |  版本  |
+| ------------- |:----------:| -------|:--------------:| ------ |
+| color         | 图标颜色    | String | 空，继承父元素  | 1.0.0 |
+| size          | 图标大小    | String | 空，继承父元素  | 1.0.0 |
+
 </div>
 
 <script setup lang="ts">
@@ -78,5 +88,18 @@ console.log('',iconList);
 
 .language-vue {
   background-color: rgb(0, 62, 119) !important;
+}
+
+.props-table table td{
+  font-family: Lucida Console,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+  font-size: 12px;
+}
+.props-table table td:nth-child(1){
+  font-weight: bold;
+  font-size: 10px;
+}
+.props-table table td:nth-child(3){
+  color: #c41d7f;
+  font-size: 10px;
 }
 </style>
