@@ -2,7 +2,7 @@
 提供了一套常用的图标集合。
 
 ## 使用方法
-直接通过设置类名为 y-icon-name 来使用即可。例如：
+直接通过设置类名为 `y-icon-name` 来使用即可。例如：
 
 <div class="demo demo-icon">
   <y-icon class="y-icon-switch-button"></y-icon>
@@ -47,8 +47,6 @@ for(let i in iconListTrans) {
 }
 const iconList = ref(iconListTrans);
 
-console.log('',iconList);
-
 </script>
 
 
@@ -84,6 +82,8 @@ console.log('',iconList);
 .icon-item-text {
   font-family: Lucida Console,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
   font-size: 12px;
+  max-height: 20px;
+  padding: 0 8px; 
 }
 
 .language-vue {

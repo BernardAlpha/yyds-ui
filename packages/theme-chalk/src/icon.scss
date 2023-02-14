@@ -15,6 +15,74 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.#{$namespace}-icon-user:before {
+  content: "\e63e";
+}
+
+.#{$namespace}-icon-close-circle:before {
+  content: "\e63f";
+}
+
+.#{$namespace}-icon-square:before {
+  content: "\e63d";
+}
+
+.#{$namespace}-icon-lock:before {
+  content: "\e63b";
+}
+
+.#{$namespace}-icon-unselected:before {
+  content: "\e63c";
+}
+
+.#{$namespace}-icon-mobile:before {
+  content: "\e63a";
+}
+
+.#{$namespace}-icon-clock:before {
+  content: "\e638";
+}
+
+.#{$namespace}-icon-checked:before {
+  content: "\e639";
+}
+
+.#{$namespace}-icon-edit:before {
+  content: "\e637";
+}
+
+.#{$namespace}-icon-node:before {
+  content: "\e636";
+}
+
+.#{$namespace}-icon-menu-right:before {
+  content: "\e62b";
+}
+
+.#{$namespace}-icon-menu-left:before {
+  content: "\e635";
+}
+
+.#{$namespace}-icon-search-unclosed:before {
+  content: "\e62c";
+}
+
+.#{$namespace}-icon-turn-anticlockwise:before {
+  content: "\e62d";
+}
+
+.#{$namespace}-icon-turn-clockwise:before {
+  content: "\e62f";
+}
+
+.#{$namespace}-icon-arrow-left-solid:before {
+  content: "\e633";
+}
+
+.#{$namespace}-icon-arrow-right-solid:before {
+  content: "\e634";
+}
+
 .#{$namespace}-icon-switch-button:before {
   content: "\e61f";
 }
