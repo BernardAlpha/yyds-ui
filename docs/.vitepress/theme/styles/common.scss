@@ -1,0 +1,22 @@
+// markdown vue 代码块样式
+.language-vue {
+  background-color: rgb(0, 62, 119) !important;
+}
+
+// 组件props表格样式
+.props-table {
+  table {
+    td{
+      font-family: Lucida Console,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+      font-size: 12px;
+    }
+    td:nth-child(1){
+      font-weight: bold;
+      font-size: 10px;
+    }
+    td:nth-child(3){
+      color: #c41d7f;
+      font-size: 10px;
+    }
+  }
+}

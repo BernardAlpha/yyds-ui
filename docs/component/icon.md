@@ -10,7 +10,7 @@
   <y-icon class="y-icon-search" color="#54ff44" size="28"></y-icon>
 
   ```vue
-  <y-icon class="y-icon-switch-button" color="#4463ff"></y-icon>
+  <y-icon class="y-icon-switch-button"></y-icon>
   <y-icon class="y-icon-palette" color="#ff44b7"></y-icon>
   <y-icon class="y-icon-search" color="#54ff44" size="28"></y-icon>
   ```
@@ -84,22 +84,5 @@ const iconList = ref(iconListTrans);
   font-size: 12px;
   max-height: 20px;
   padding: 0 8px; 
-}
-
-.language-vue {
-  background-color: rgb(0, 62, 119) !important;
-}
-
-.props-table table td{
-  font-family: Lucida Console,Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
-  font-size: 12px;
-}
-.props-table table td:nth-child(1){
-  font-weight: bold;
-  font-size: 10px;
-}
-.props-table table td:nth-child(3){
-  color: #c41d7f;
-  font-size: 10px;
 }
 </style>

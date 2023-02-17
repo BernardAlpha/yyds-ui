@@ -40,7 +40,10 @@ module.exports = {
       '/component/': [
         {
           text: '基础组件',
-          items: [{ text: 'icon', link: '/component/icon' }]
+          items: [
+            { text: 'Icon 图标', link: '/component/icon' },
+            { text: 'Button 按钮', link: '/component/button' }
+          ]
         }
       ]
     }
