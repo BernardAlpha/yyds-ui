@@ -9,10 +9,24 @@
 
 [class^="#{$namespace}-icon"], [class*="#{$namespace}-icon"] {
   font-family: "yyds-ui-icons" !important;
-  font-size: 16px;
+  font-size: inherit;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$namespace}-icon-loading {
+  animation: loadingCircle 1s infinite linear;
+}
+@keyframes loadingCircle {
+  100%{transform: rotate(180deg);}
+}
+
+
+// update here ↓↓↓↓↓↓
+
+.#{$namespace}-icon-loading:before {
+  content: "\e640";
 }
 
 .#{$namespace}-icon-user:before {
@@ -143,3 +157,4 @@
   content: "\e632";
 }
 
+// update here ↑↑↑↑↑↑
