@@ -8,6 +8,7 @@
 }
 
 [class^="#{$namespace}-icon"], [class*="#{$namespace}-icon"] {
+  display: inline-block;
   font-family: "yyds-ui-icons" !important;
   font-size: inherit;
   font-style: normal;
@@ -16,10 +17,10 @@
 }
 
 .#{$namespace}-icon-loading {
-  animation: loadingCircle 1s infinite linear;
+  animation: loadingCircle 2s infinite linear;
 }
 @keyframes loadingCircle {
-  100%{transform: rotate(180deg);}
+  100%{transform: rotate(360deg);}
 }
 
 
