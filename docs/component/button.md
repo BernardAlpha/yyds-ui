@@ -115,10 +115,24 @@
 ## Button Props
 <div class="props-table">
 
-| 参数          | 说明        |  类型  |     默认值     |  版本  |
-| ------------- |:----------:| -------|:--------------:| ------ |
-| color         | 图标颜色    | String | 空，继承父元素  | 1.0.0 |
-| size          | 图标大小    | String | 空，继承父元素  | 1.0.0 |
+| 参数          |     说明    |  类型     |      默认值    |                可选值              |  版本  |
+| ------------- |:-----------:| ----------|:--------------:|:---------------------------------:| ------ |
+| disabled      | 是否禁用    | Boolean   | `false`        | `ture`、`false`                   | 1.0.0 |
+| icon          | 显示的图标  | String    | 空，不显示图标  | 参照[icon组件的图标集合](/component/icon.html#图标集合)               | 1.0.0 |
+| iconPlacement | 图标位置    | String    | `false`        | `left`、`right`                   | 1.0.0 |
+| loading       | 加载状态    | Boolean   | `false`        | `ture`、`false`，启用时会覆盖icon  | 1.0.0 |
+| round         | 半圆圆角    | Boolean   | `false`        | `ture`、`false`                   | 1.0.0 |
+| theme         | 主题        | String    | `solid`        | `solid`、`hollow`、`text`         | 1.0.0 |
+| type          | 类型        | String    | `primary`      | `primary`                         | 1.0.0 |
+
+</div>
+
+## Button Events
+<div class="props-table">
+
+| 事件名称       | 说明        |   回调参数   |  版本  |
+| ------------- |:-----------:|:------------:| ------ |
+| click         | 点击事件     |     ---      | 1.0.0 |
 
 </div>
 

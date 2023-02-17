@@ -18,5 +18,8 @@
       color: #c41d7f;
       font-size: 10px;
     }
+    tr:nth-child(2n) {
+      background-color: #ffffff;
+    }
   }
 }
