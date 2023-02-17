@@ -93,21 +93,21 @@
     <y-button @click="buttonClick" theme="text">点击</y-button>
   </template>
   <script setup lang="ts">
-    import { ref } from 'vue';
+  import { ref } from 'vue';
 
-    let isLoading = ref(false);
+  let isLoading = ref(false);
 
-    const buttonClick = () => {
-      console.log('buttonClick');
-    }
+  const buttonClick = () => {
+    console.log('buttonClick');
+  }
 
-    const loadingClick = () => {
-      console.log('loadingClick', isLoading.value);
-      isLoading.value = true;
-      setTimeout(() => {
-        isLoading.value = false;
-      }, 1000);
-    }
+  const loadingClick = () => {
+    console.log('loadingClick', isLoading.value);
+    isLoading.value = true;
+    setTimeout(() => {
+      isLoading.value = false;
+    }, 1000);
+  }
   </script>
   ```
 </div>
