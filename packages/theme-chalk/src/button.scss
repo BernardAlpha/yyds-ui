@@ -1,0 +1,126 @@
+@use 'mixins/mixins.scss' as *;
+@use 'common/var.scss' as *;
+
+@include b(button) {
+  min-width: 100px;
+  height: 32px;
+  border: 1px solid $yyds-theme-blue;
+  border-radius: 4px;
+  color: $color-button-primary-solid-ct-regular;
+  font-size: 12px;
+  padding: 0 20px;
+  @include m(primary) {
+    border-width: 0;
+    border-color: unset;
+    background-color: $color-button-primary-solid-bg-regular;
+    &:hover {
+      background-color: $color-button-primary-solid-bg-hover;
+    }
+    &:active {
+      background-color: $color-button-primary-solid-bg-active;
+    }
+    @include when(disabled) {
+      border-color: unset;
+      color: $color-button-primary-solid-ct-disabled;
+      background-color: $color-button-primary-solid-bg-disabled;
+    }
+    @include when(loading) {
+      border-color: unset;
+      color: $color-button-primary-solid-ct-regular;
+      background-color: $color-button-primary-solid-bg-loading;
+    }
+  }
+  
+  @include m(primary and hollow) {
+    border-width: 1px;
+    background-color: unset;
+    color: $color-button-primary-hollow-ct-regular;
+    &:hover {
+      background-color: $color-button-primary-hollow-bg-hover;
+    }
+    &:active {
+      background-color: $color-button-primary-hollow-bg-active;
+    }
+    @include when(disabled) {
+      color: $color-button-primary-hollow-ct-disabled;
+      background-color: $color-button-primary-hollow-bg-disabled;
+      border-color: $color-button-primary-hollow-bd-disabled;
+    }
+    @include when(loading) {
+      border-color: $color-button-primary-hollow-bd-loading;
+      color: $color-button-primary-hollow-ct-regular;
+      background-color: $color-button-primary-hollow-bg-loading;
+    }
+  }
+
+  @include m(text) {
+    height: auto;
+    min-width: auto;
+    border: none;
+    background-color: unset;
+    color: $color-button-primary-solid-bg-regular;
+    padding: 0 0;
+    &:hover {
+      background-color: unset;
+      color: $color-button-primary-solid-bg-hover;
+    }
+    &:active {
+      background-color: unset;
+      color: $color-button-primary-solid-bg-active;
+    }
+    @include when(disabled) {
+      color: $color-button-primary-solid-ct-disabled;
+      background-color: unset;
+    }
+    @include when(loading) {
+      color: $color-button-primary-solid-bg-regular;
+      background-color: unset;
+    }
+  }
+  @include m(small) {
+    background-color: #da2;
+  }
+
+  @include when(round) {
+    border-radius: 9999999px;
+  }
+
+  @include when(disabled) {
+    &, &:hover, &:focus {
+      cursor: not-allowed;
+    }
+  }
+  @include when(loading) {
+    &, &:hover, &:focus {
+      cursor: not-allowed;
+    }
+  }
+
+  @include e(icon) {
+    .y-icon {
+      font-size: calc(100% + 2px);
+      vertical-align: bottom;
+    }
+  }
+
+  @include em(icon, left) {
+    margin-right: 10px;
+  }
+  @include em(icon, right) {
+    margin-left: 10px;
+  }
+}
+
+
+
+// @each $type in (primary, success, warning, danger, info) {
+//   @include m($type) {
+//     @include button-variant($type);
+//   }
+// }
+
+
+// .y-button--primary.y-button--hollow{
+//   background-color: unset;
+//   border: 1px solid #3598dc;
+// }

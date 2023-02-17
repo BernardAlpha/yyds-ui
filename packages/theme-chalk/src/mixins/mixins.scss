@@ -27,6 +27,14 @@
   }
 }
 
+@mixin em($element, $modifier) {
+  @at-root {
+    #{&+$element-separator+$element+$modifier-separator+$modifier} {
+      @content;
+    }
+  }
+}
+
 @mixin when($state) {
   @at-root {
     &.#{$state-prefix + $state} {

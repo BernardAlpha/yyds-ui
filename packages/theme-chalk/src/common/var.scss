@@ -1,0 +1,44 @@
+$yyds-theme-blue: #3598dc;
+
+$color-button-primary-solid-ct-regular: #ffffff;
+$color-button-primary-solid-ct-disabled: #999999;
+$color-button-primary-solid-bg-regular: $yyds-theme-blue;
+$color-button-primary-solid-bg-hover: #0a94f7;
+$color-button-primary-solid-bg-active: #1089dc;
+$color-button-primary-solid-bg-disabled: #eeeeee;
+$color-button-primary-solid-bg-loading: #3598dc80;
+
+$color-button-primary-hollow-ct-regular: $yyds-theme-blue;
+$color-button-primary-hollow-ct-disabled: #cccccc;
+$color-button-primary-hollow-bg-regular: $yyds-theme-blue;
+$color-button-primary-hollow-bg-hover: #0a94f71a;
+$color-button-primary-hollow-bg-active: #1089dc33;
+$color-button-primary-hollow-bg-disabled: #ffffff;
+$color-button-primary-hollow-bg-loading: #ffffff;
+$color-button-primary-hollow-bd-disabled: #eeeeee;
+$color-button-primary-hollow-bd-loading: #3598dc80;
+
+
+// 百分比与16进制换算
+// Alpha %	Hex	Rgb 255
+// 100%	FF	255
+// 95%	F2	242
+// 90%	E6	230
+// 85%	D9	217
+// 80%	CC	204
+// 75%	BF	191
+// 70%	B3	179
+// 65%	A6	166
+// 60%	99	153
+// 55%	8C	140
+// 50%	80	128
+// 45%	73	115
+// 40%	66	102
+// 35%	59	89
+// 30%	4D	77
+// 25%	40	64
+// 20%	33	51
+// 15%	26	38
+// 10%	1A	26
+// 5%  	0D	13
+// 0% 	00	0

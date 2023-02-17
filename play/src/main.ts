@@ -5,10 +5,12 @@ import Icon from '@yyds-ui/components/icon';
 import '@yyds-ui/theme-chalk/src/index.scss'
 
 import Input from '@yyds-ui/components/input';
+import Button from '@yyds-ui/components/button';
 
 const plugins = [
   Icon,
-  Input
+  Input,
+  Button
 ];
 
 const app = createApp(App);
