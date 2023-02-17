@@ -2,17 +2,19 @@
 提供了一套常用的图标集合。
 
 ## 使用方法
-直接通过设置类名为 `y-icon-name` 来使用即可。例如：
+通过设置 `icon` 来使用即可。例如：
 
 <div class="demo demo-icon">
-  <y-icon class="y-icon-switch-button"></y-icon>
-  <y-icon class="y-icon-palette" color="#ff44b7"></y-icon>
-  <y-icon class="y-icon-search" color="#54ff44" size="28"></y-icon>
+  <y-icon icon="switch-button"></y-icon>
+  <y-icon icon="palette" color="#ff44b7"></y-icon>
+  <y-icon icon="search" color="#54ff44" size="28"></y-icon>
 
   ```vue
-  <y-icon class="y-icon-switch-button"></y-icon>
-  <y-icon class="y-icon-palette" color="#ff44b7"></y-icon>
-  <y-icon class="y-icon-search" color="#54ff44" size="28"></y-icon>
+  <template>
+    <y-icon icon="switch-button"></y-icon>
+    <y-icon icon="palette" color="#ff44b7"></y-icon>
+    <y-icon icon="search" color="#54ff44" size="28"></y-icon>
+  </template>
   ```
 </div>
 
@@ -20,8 +22,8 @@
 ## 图标集合
 <div class="icon-list">
   <div class="icon-item" v-for="(item, index) in iconList">
-    <y-icon :class="`y-icon-${item}`"></y-icon>
-    <div class="icon-item-text">{{ `y-icon-${item}` }}</div>
+    <y-icon :icon="item"></y-icon>
+    <div class="icon-item-text">{{ item }}</div>
   </div>
 </div>
 

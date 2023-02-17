@@ -1,5 +1,5 @@
 <template>
-  <i :class="bem.b()" :style="style">
+  <i :class="[bem.b(), iconClass()]" :style="style">
     <slot></slot>
   </i>
 </template>
@@ -16,6 +16,10 @@ defineOptions({
 const bem = createNamespace('icon');
 
 const props = defineProps(iconProps);
+
+const iconClass = () => {
+  return props.icon ? `${bem.b()}-${props.icon}` : ''
+}
 
 const style = computed(() => {
   if (!props.color && !props.size) {
