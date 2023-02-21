@@ -82,13 +82,13 @@
 添加 `click` 事件作为点击按钮时的回调。
 
 <div class="demo demo-button">
-  <y-button @click="buttonClick('click')">点击</y-button>
+    <y-button @click="buttonClick('click')">点击</y-button>
   <y-button @click="loadingClick" :loading="isLoading" theme="hollow">加载1s</y-button>
   <y-button @click="buttonClick" theme="text">点击</y-button>
 
   ```vue
   <template>
-    <y-button @click="buttonClick">点击</y-button>
+    <y-button @click="buttonClick('click')">点击</y-button>
     <y-button @click="loadingClick" :loading="isLoading" theme="hollow">加载1s</y-button>
     <y-button @click="buttonClick" theme="text">点击</y-button>
   </template>

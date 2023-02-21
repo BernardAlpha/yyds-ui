@@ -44,6 +44,4 @@ const emit = defineEmits(buttonEmits);
 const emitClick = (e: MouseEvent) => {
   emit('click', e);
 }
-
-console.log('',props);
 </script>
