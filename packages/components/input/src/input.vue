@@ -61,11 +61,6 @@ import {
 } from 'vue';
 import { inputProps, inputEmits } from './input';
 
-defineOptions({
-  name: 'y-input',
-  inheritAttrs: false
-});
-
 const bem = createNamespace('input');
 
 const props = defineProps(inputProps);
@@ -143,5 +138,12 @@ const handleBlur = (e: FocusEvent) => {
 
 const handleFocus = (e: FocusEvent) => {
   emit('focus', e);
+};
+</script>
+
+<script lang="ts">
+export default {
+  name: 'y-input',
+  inheritAttrs: false
 };
 </script>

@@ -31,10 +31,10 @@
 import { createNamespace } from '@yyds-ui/utils/create';
 import { buttonEmits, buttonProps } from './button';
 
-defineOptions({
-  name: 'y-button',
-  inheritAttrs: false
-});
+// defineOptions({
+//   name: 'y-button',
+//   inheritAttrs: false
+// });
 
 const bem = createNamespace('button');
 
@@ -42,6 +42,14 @@ const props = defineProps(buttonProps);
 const emit = defineEmits(buttonEmits);
 
 const emitClick = (e: MouseEvent) => {
+  console.log('YYDS-emitClick');
   emit('click', e);
 }
+</script>
+
+<script lang="ts">
+export default {
+  name: 'y-button',
+  inheritAttrs: false
+};
 </script>

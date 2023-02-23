@@ -9,10 +9,6 @@ import { computed } from 'vue';
 import { createNamespace } from '@yyds-ui/utils/create';
 import { iconProps } from './icon';
 
-defineOptions({
-  name: 'y-icon'
-});
-
 const bem = createNamespace('icon');
 
 const props = defineProps(iconProps);
@@ -30,4 +26,11 @@ const style = computed(() => {
     ...(props.size ? { 'font-size': props.size + 'px' } : {})
   };
 });
+</script>
+
+<script lang="ts">
+export default {
+  name: 'y-icon',
+  inheritAttrs: false
+};
 </script>
