@@ -9,6 +9,7 @@
   color: $color-button-primary-solid-ct-regular;
   font-size: 12px;
   padding: 0 16px;
+  cursor: pointer;
   @include m(primary) {
     border-width: 0;
     border-color: unset;
