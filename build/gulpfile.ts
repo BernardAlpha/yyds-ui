@@ -2,10 +2,12 @@
 import { series, parallel } from 'gulp';
 import { genTypes } from "./gen-types";
 import { run, withTaskName } from './utils';
-import { outDir, yydsRoot } from "./utils/paths";
+import { outDir, yydsRoot, projectRoot } from "./utils/paths";
 
 const copySourceCode = () => async () => {
   await run(`cp ${yydsRoot}/package.json ${outDir}/package.json`);
+  await run(`cp ${projectRoot}/README.md ${outDir}/README.md`);
+  await run(`cp ${projectRoot}/LICENSE ${outDir}/LICENSE`);
 };
 
 // 1.打包样式 2.打包工具 3.打包所有组件 4.生成组件库 5.发布组件
