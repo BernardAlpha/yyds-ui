@@ -11,3 +11,6 @@ export const yydsRoot = path.resolve(__dirname,'../../packages/yyds-ui')
 
 // 组件目录
 export const compRoot = path.resolve(projectRoot,'packages/components')
+
+// SVG图标目录
+export const svgRoot = path.resolve(projectRoot,'packages/theme-chalk/src/svgs')
