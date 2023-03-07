@@ -100,7 +100,7 @@
   @include e(icon) {
     .y-icon {
       font-size: calc(100% + 2px);
-      vertical-align: bottom;
+      vertical-align: text-top;
     }
   }
 

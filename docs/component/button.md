@@ -66,14 +66,14 @@
   <y-button icon="search" @click="loadingClick" :loading="isLoading" >搜索</y-button>
   <y-button icon="arrow-left" theme="hollow" >上一步</y-button>
   <y-button icon="arrow-right" iconPlacement="right">下一步</y-button>
-  <y-button icon="success" theme="text">添加</y-button>
+  <y-button icon="add" theme="text">添加</y-button>
 
   ```vue
   <template>
     <y-button icon="search" @click="loadingClick" :loading="isLoading" >搜索</y-button>
     <y-button icon="arrow-left" theme="hollow" >上一步</y-button>
     <y-button icon="arrow-right" iconPlacement="right">下一步</y-button>
-    <y-button icon="success" theme="text">添加</y-button>
+    <y-button icon="add" theme="text">添加</y-button>
   </template>
   ```
 </div>
@@ -119,9 +119,9 @@
 | ------------- |:-----------:| ----------|:--------------:|:---------------------------------:| ------ |
 | disabled      | 是否禁用    | Boolean   | `false`        | `ture`、`false`                   | 1.0.0 |
 | icon          | 显示的图标  | String    | 空，不显示图标  | 参照[icon组件的图标集合](/component/icon.html#图标集合)               | 1.0.0 |
-| iconPlacement | 图标位置    | String    | `false`        | `left`、`right`                   | 1.0.0 |
+| iconPlacement | 图标位置    | String    | `left`         | `left`、`right`                   | 1.0.0 |
 | loading       | 加载状态    | Boolean   | `false`        | `ture`、`false`，启用时会覆盖icon  | 1.0.0 |
-| round         | 半圆圆角    | Boolean   | `false`        | `ture`、`false`                   | 1.0.0 |
+| round         | 半圆圆角    | Boolean   | `true`         | `ture`、`false`                   | 1.0.0 |
 | theme         | 主题        | String    | `solid`        | `solid`、`hollow`、`text`         | 1.0.0 |
 | type          | 类型        | String    | `primary`      | `primary`                         | 1.0.0 |
 

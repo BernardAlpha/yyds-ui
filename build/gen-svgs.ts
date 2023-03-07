@@ -31,7 +31,7 @@ const start = async () => {
     const filename = path.basename(file).replace('.svg', '');
     // Get svg file content
     const content = (await readFile(file, 'utf-8')).replace(/[\r\n]/g, '');
-    svgCollection += `{name: 'arrow-left',` + 'code:`' + content + '`},';
+    svgCollection += `{name: "${filename}",` + 'code:`' + content + '`},';
     if (index + 1 === (await files).length) {
       svgCollection += ']';
       // 输出合并处理后的svg

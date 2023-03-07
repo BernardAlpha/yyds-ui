@@ -13,18 +13,8 @@ function compile() {
   return src(path.resolve(__dirname, './src/*.scss'))
     .pipe(sass.sync())
     .pipe(autoPrefixer())
-    .on('data',(data) => {
-        let content = data.contents.toString()
-        content = content.replaceAll('./fonts','yyds-ui/theme-chalk/fonts')
-        data.contents = new Buffer(content)
-    })
     .pipe(cleanCss())
     .pipe(dest('./dist/css'));
-}
-
-function copyFont() {
-  return src(path.resolve(__dirname, './src/fonts/**'))
-    .pipe(dest('./dist/fonts'));
 }
 
 function copyFullStyle() {
@@ -34,6 +24,5 @@ function copyFullStyle() {
 
 export default series(
   compile,
-  copyFont,
   copyFullStyle
 );

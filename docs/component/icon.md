@@ -5,13 +5,13 @@
 通过设置 `icon` 来使用即可。例如：
 
 <div class="demo demo-icon">
-  <y-icon icon="switch-button"></y-icon>
+  <y-icon icon="shutdown"></y-icon>
   <y-icon icon="palette" color="#ff44b7"></y-icon>
   <y-icon icon="search" color="#54ff44" size="28"></y-icon>
 
   ```vue
   <template>
-    <y-icon icon="switch-button"></y-icon>
+    <y-icon icon="shutdown"></y-icon>
     <y-icon icon="palette" color="#ff44b7"></y-icon>
     <y-icon icon="search" color="#54ff44" size="28"></y-icon>
   </template>
@@ -21,9 +21,9 @@
 
 ## 图标集合
 <div class="icon-list">
-  <div class="icon-item" v-for="(item, index) in iconList">
-    <y-icon :icon="item"></y-icon>
-    <div class="icon-item-text">{{ item }}</div>
+  <div class="icon-item" v-for="(item, index) in icons">
+    <y-icon :icon="item.name"></y-icon>
+    <div class="icon-item-text">{{ item.name }}</div>
   </div>
 </div>
 
@@ -39,20 +39,8 @@
 </div>
 
 <script setup lang="ts">
-import icons from '../../packages/theme-chalk/src/icon.scss';
-import {ref} from 'vue';
-
-const reg = /-icon-(\S*)before/g
-
-const iconListTrans = icons.match(reg);
-for(let i in iconListTrans) {
-  iconListTrans[i] = iconListTrans[i].slice(6, -7);
-}
-const iconList = ref(iconListTrans);
-
+import icons from '../../packages/theme-chalk/src/svgs/svg-list.ts';
 </script>
-
-
 
 <style>
 .demo {
@@ -79,6 +67,7 @@ const iconList = ref(iconListTrans);
   min-width: 150px;
 }
 .icon-item .y-icon {
+  margin: 0 auto;
   font-size: 26px;
   margin-bottom: 15px;
 }
