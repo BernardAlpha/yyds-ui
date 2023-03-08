@@ -1,5 +1,5 @@
 <template>
-  <i :class="[bem.b(), iconClass()]" :id="uniqueID" :style="style"></i>
+  <i :class="[bem.b(), iconClass()]" :id="uniqueID" :style="style" v-bind="$attrs"></i>
 </template>
 
 <script setup lang="ts">
