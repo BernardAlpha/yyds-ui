@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted} from 'vue';
+import { computed, onMounted, watch} from 'vue';
 import { createNamespace } from '@yyds-ui/utils/create';
 import { genUniqueID } from '@yyds-ui/utils/genid';
 import { iconProps } from './icon';
@@ -13,7 +13,16 @@ const uniqueID = genUniqueID();
 const bem = createNamespace('icon');
 const props = defineProps(iconProps);
 
+watch(
+  () => props.icon,  
+  () => { setSvgEle(); }
+);
+
 onMounted(() => {
+  setSvgEle();
+})
+
+const setSvgEle = () => {
   if(props.icon) {
     const iconIndex = iconList.findIndex(item => {
       return item.name === props.icon
@@ -26,7 +35,7 @@ onMounted(() => {
       (document.getElementById(uniqueID) as HTMLInputElement).innerHTML = newCode;
     }
   }
-})
+}
 
 const iconClass = () => {
   return props.icon ? `${bem.b()}-${props.icon}` : ''
