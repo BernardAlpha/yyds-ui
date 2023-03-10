@@ -15,7 +15,8 @@ const props = defineProps(iconProps);
 
 watch(
   () => props,  
-  () => { setSvgEle(); }
+  () => { setSvgEle(); },
+  { deep: true }
 );
 
 onMounted(() => {
