@@ -5,11 +5,11 @@
 使用 `type`、`theme` 和 `round` 来定义按钮的样式。
 
 <div class="demo demo-button">
-    <y-button>实心按钮</y-button>
-    <y-button theme="hollow">空心按钮</y-button>
-    <y-button theme="text">文字</y-button>
-    <y-button :round="false">普通圆角</y-button>
-    <y-button>文字很多很多很多很多很多</y-button>
+  <y-button>实心按钮</y-button>
+  <y-button theme="hollow">空心按钮</y-button>
+  <y-button theme="text">文字</y-button>
+  <y-button :round="false">普通圆角</y-button>
+  <y-button>文字很多很多很多很多很多</y-button>
 
   ```vue
   <template>
@@ -66,14 +66,14 @@
   <y-button icon="search" @click="loadingClick" :loading="isLoading" >搜索</y-button>
   <y-button icon="arrow-left" theme="hollow" >上一步</y-button>
   <y-button icon="arrow-right" iconPlacement="right">下一步</y-button>
-  <y-button icon="add" theme="text">添加</y-button>
+  <y-button icon="plus" theme="text">添加</y-button>
 
   ```vue
   <template>
     <y-button icon="search" @click="loadingClick" :loading="isLoading" >搜索</y-button>
     <y-button icon="arrow-left" theme="hollow" >上一步</y-button>
     <y-button icon="arrow-right" iconPlacement="right">下一步</y-button>
-    <y-button icon="add" theme="text">添加</y-button>
+    <y-button icon="plus" theme="text">添加</y-button>
   </template>
   ```
 </div>
@@ -157,18 +157,7 @@ const loadingClick = () => {
 
 
 <style>
-.demo {
-  border: 1px solid #ebebeb;
-  border-radius: 3px;
-  transition: .2s;
-  padding: 20px;
-}
 .demo-button .y-button {
   margin: 6px 8px;
-}
-
-
-.language-vue {
-  background-color: rgb(0, 62, 119) !important;
 }
 </style>

@@ -43,12 +43,6 @@ import icons from '../../packages/theme-chalk/src/svgs/svg-list.ts';
 </script>
 
 <style>
-.demo {
-  border: 1px solid #ebebeb;
-  border-radius: 3px;
-  transition: .2s;
-  padding: 20px;
-}
 .demo-icon .y-icon {
   padding: 10px;
 }
