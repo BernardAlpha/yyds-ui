@@ -14,7 +14,7 @@ const bem = createNamespace('icon');
 const props = defineProps(iconProps);
 
 watch(
-  () => props.icon,  
+  () => props,  
   () => { setSvgEle(); }
 );
 
