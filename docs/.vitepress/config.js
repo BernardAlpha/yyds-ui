@@ -42,6 +42,7 @@ module.exports = {
           text: '基础组件',
           items: [
             { text: 'Icon 图标', link: '/component/icon' },
+            { text: 'Input 输入框', link: '/component/input' },
             { text: 'Button 按钮', link: '/component/button' }
           ]
         }

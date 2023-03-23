@@ -32,6 +32,28 @@ export const inputProps = {
     type: Boolean,
     default: false
   },
+  round: {
+    type: Boolean,
+    default: false
+  },
+  prefixIcon: {
+    type: String
+  },
+  prefixText: {
+    type: String
+  },
+  prefixButton: {
+    type: String
+  },
+  suffixIcon: {
+    type: String
+  },
+  suffixText: {
+    type: String
+  },
+  suffixButton: {
+    type: String
+  },
   label: {
     type: String
   }
@@ -44,8 +66,14 @@ export const inputEmits = {
   input: (value: string) => isString(value),
   change: (value: string) => isString(value),
   focus: (e: FocusEvent) => e instanceof FocusEvent,
+  mouseleave: (evt: MouseEvent) => evt instanceof MouseEvent,
+  mouseenter: (evt: MouseEvent) => evt instanceof MouseEvent,
   blur: (e: FocusEvent) => e instanceof FocusEvent,
-  clear: () => true // 清空事件
+  clear: () => true, // 清空事件
+  prefixButtonClick: (e: MouseEvent) => e instanceof MouseEvent,
+  suffixButtonClick: (e: MouseEvent) => e instanceof MouseEvent,
+  prefixIconClick: (e: MouseEvent) => e instanceof MouseEvent,
+  suffixIconClick: (e: MouseEvent) => e instanceof MouseEvent
 };
 
 export type InputEmits = typeof inputEmits;

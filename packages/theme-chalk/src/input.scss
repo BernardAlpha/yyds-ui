@@ -1,41 +1,131 @@
 @use 'mixins/mixins.scss' as *;
+@use 'common/var.scss' as *;
 
 @include b(input) {
-  width: 100%;
-  color: blue;
+  max-width: 100%;
+  color: #333333;
   height: 32px;
   font-size: 12px;
   @include e(wrapper) {
     display: inline-flex;
+    padding: 0 10px;
     height: 32px;
-    border: 1px solid #E2E2E2;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #e2e2e2;
     border-radius: 5px;
+    &:hover {
+      border-color: #cccccc;
+    }
+    &.is-focus {
+      border-color: $yyds-theme-blue;
+    }
+    .#{$namespace}-input__suffix-origin {
+      margin: auto 0 auto 5px;
+      flex: none;
+      display: inline-block;
+      &.y-icon {
+        font-size: calc(100% + 3px);
+        cursor: pointer;
+        color: #cccccc;
+        &:hover {
+          color: $yyds-theme-blue;
+        }
+      }
+    }
+
+    .#{$namespace}-input__prefix-item,
+    .#{$namespace}-input__suffix-item {
+      flex: none;
+      color: $yyds-theme-blue;
+    }
+    .#{$namespace}-input__prefix-item {
+      margin: auto 8px auto 0;
+    }
+    .#{$namespace}-input__suffix-item {
+      margin: auto 0 auto 8px;
+    }
+
+    .#{$namespace}-input__prefix-button,
+    .#{$namespace}-input__suffix-button {
+      color: $yyds-theme-blue;
+      cursor: pointer;
+    }
+    .#{$namespace}-input__prefix-button-line,
+    .#{$namespace}-input__suffix-button-line {
+      width: 1px;
+      height: 100%;
+      background-color: #e2e2e2;
+    }
+    .#{$namespace}-input__prefix-button-line {
+      margin-right: 8px;
+    }
+    .#{$namespace}-input__suffix-button-line {
+      margin-left: 8px;
+    }
+    .#{$namespace}-input__prefix-text,
+    .#{$namespace}-input__suffix-text {
+      color: #333333;
+    }
+    .#{$namespace}-input__prefix-icon,
+    .#{$namespace}-input__suffix-icon {
+      font-size: calc(100% + 3px);
+    }
   }
 
   @include e(prefix) {
     display: inline-flex;
-    min-width: 16px;
-    align-items: center;
-    border: 1px solid #da2;
+    flex: none;
+    margin: auto 8px auto 0;
+  }
+
+  @include e(suffix) {
+    display: inline-flex;
+    flex: none;
+    margin: auto 0 auto 8px;
   }
 
   @include e(inner) {
+    width: 100%;
     display: inline-flex;
     border: none;
     outline: none;
     padding: 0;
     font-size: 12px;
     font-family: MicrosoftYaHei;
+    // padding: 0 10px;
   }
 
-  @include e(suffix) {
-    display: inline-flex;
-    min-width: 16px;
-    align-items: center;
-    border: 1px solid #da2;
+  @include when(disabled) {
+    cursor: not-allowed;
+    .#{$namespace}-input__wrapper {
+      background-color: #f5f7fa;
+      &:hover {
+        border-color: #e2e2e2;
+      }
+    }
+    .#{$namespace}-input__inner {
+      cursor: not-allowed;
+      color: #cccccc;
+    }
+    .#{$namespace}-input__prefix-item,
+    .#{$namespace}-input__suffix-item {
+      color: #cccccc;
+    }
   }
 
+  @include when(round) {
+    .#{$namespace}-input__wrapper {
+      border-radius: 99999999px;
+      padding: 0 14px;
+    }
+  }
 
+  @include when(readonly) {
+    .#{$namespace}-input__wrapper {
+      background-color: #f5f7fa;
+    }
+  }
 }
 
 @include b(input-group) {

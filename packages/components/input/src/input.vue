@@ -1,19 +1,48 @@
 <template>
-  <div :class="[bem.b()]">
+  <div v-bind="$attrs" :class="[bem.b(), bem.is('disabled', disabled), bem.is('readonly', readonly), bem.is('round', round)]"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
+    >
     <div :class="bem.e('group')">
       <div v-if="slots.prepend" :class="bem.be('group', 'prepend')">
         <slot name="prepend"></slot>
       </div>
 
-      <div :class="[bem.e('wrapper')]">
-        <span v-if="slots.prefix" :class="bem.e('prefix')">
+      <div :class="[bem.e('wrapper'), bem.is('focus', focused)]">
+
+        <span
+          :class="[bem.e('prefix-item'), bem.e('prefix-button')]"
+          v-if="prefixButton"
+          @click="prefixButtonClick"
+          >
+          <div :class="bem.e('prefix-button') + '-text'">{{ prefixButton }}</div>
+        </span>
+        <span v-if="prefixButton" :class="bem.e('prefix-button') + '-line'"></span>
+        
+        <span
+          :class="[bem.e('prefix-item'), bem.e('prefix-text')]"
+          v-if="prefixText"
+          @click="focus"
+          >
+          {{ prefixText }}
+        </span>
+        
+        <y-icon
+          :class="[bem.e('prefix-item'), bem.e('prefix-icon')]"
+          v-if="prefixIcon"
+          :icon="prefixIcon"
+          @click="prefixIconClick"
+          >
+        </y-icon>
+        
+        <span v-if="slots.prefix" @click="focus" :class="bem.e('prefix')">
           <slot name="prefix"></slot>
         </span>
-
         <input
           ref="input"
-          :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
           v-bind="attrs"
+          style="width:100%;"
+          :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
           :class="bem.e('inner')"
           :placeholder="placeholder"
           :disabled="disabled"
@@ -23,21 +52,47 @@
           @blur="handleBlur"
           @focus="handleFocus"
         />
+        <span v-if="slots.suffix" @click="focus" :class="bem.e('suffix')">
+          <slot name="suffix"></slot>
+        </span>
 
         <y-icon
-          v-if="showClearable"
-          class="y-icon-heiseguanbi"
-          @click="handleClear"
-        >
+          :class="bem.e('suffix-origin')"
+          v-if="showPwdVisible && (focused || hovering)"
+          :icon="passwordVisible ? 'eye-closed' : 'eye'"
+          @click="handlePasswordVisible"
+          >
         </y-icon>
         <y-icon
-          v-if="showPwdVisible"
-          class="y-icon-guanji"
-          @click="handlePasswordVisible"
-        >
+          :class="bem.e('suffix-origin')"
+          v-if="showClearable && (focused || hovering)"
+          icon="close-circle"
+          @click="handleClear"
+          >
         </y-icon>
-        <span v-if="slots.suffix" :class="bem.e('suffix')">
-          <slot name="suffix"></slot>
+        
+        <y-icon
+          :class="[bem.e('suffix-item'), bem.e('suffix-icon')]"
+          v-if="suffixIcon"
+          :icon="suffixIcon"
+          @click="suffixIconClick"
+          >
+        </y-icon>
+        <span
+          :class="[bem.e('suffix-item'), bem.e('suffix-text')]"
+          v-if="suffixText"
+          @click="focus"
+          >
+          {{ suffixText }}
+        </span>
+
+        <span v-if="suffixButton" :class="bem.e('suffix-button-line')"></span>
+        <span
+          :class="[bem.e('suffix-item'), bem.e('suffix-button')]"
+          v-if="suffixButton"
+          @click="suffixButtonClick"
+          >
+          <div :class="[bem.e('suffix-button') + '-text']">{{ suffixButton }}</div>
         </span>
       </div>
 
@@ -72,12 +127,17 @@ const attrs = useAttrs();
 const input = ref<HTMLInputElement | null>(null);
 
 const passwordVisible = ref(false);
+const focused = ref(false);
+const hovering = ref(false);
+
 const handlePasswordVisible = () => {
+  console.log('handlePasswordVisible',);
   passwordVisible.value = !passwordVisible.value;
   focus();
 };
 
 const handleClear = () => {
+  console.log('handleClear',);
   emit('input', '');
   emit('update:modelValue', '');
   emit('clear');
@@ -85,6 +145,7 @@ const handleClear = () => {
 };
 
 const focus = async () => {
+  console.log('focus');
   await nextTick();
   input.value?.focus();
 };
@@ -94,6 +155,17 @@ const showPwdVisible = computed(() => {
     props.modelValue && props.showPassword && !props.disabled && !props.readonly
   );
 });
+
+
+const handleMouseLeave = (e: MouseEvent) => {
+  hovering.value = false
+  emit('mouseleave', e)
+}
+
+const handleMouseEnter = (e: MouseEvent) => {
+  hovering.value = true
+  emit('mouseenter', e)
+}
 
 const showClearable = computed(() => {
   return (
@@ -114,8 +186,8 @@ watch(
 
 const setNativeInputValue = () => {
   const inputEle = input.value;
-  console.log('inputEle', inputEle);
-  console.log('props', props.modelValue);
+  // console.log('inputEle', inputEle);
+  // console.log('props', props.modelValue);
   if (!inputEle) {
     return;
   }
@@ -133,12 +205,37 @@ const handleChange = (e: Event) => {
 };
 
 const handleBlur = (e: FocusEvent) => {
+  console.log('handleBlur');
+  focused.value = false;
   emit('blur', e);
 };
 
 const handleFocus = (e: FocusEvent) => {
+  console.log('handleFocus');
+  focused.value = true;
   emit('focus', e);
 };
+
+const prefixButtonClick = (e: MouseEvent) => {
+  console.log('YYDS-prefixButtonClick');
+  focus();
+  emit('prefixButtonClick', e);
+}
+const suffixButtonClick = (e: MouseEvent) => {
+  console.log('YYDS-suffixButtonClick');
+  focus();
+  emit('suffixButtonClick', e);
+}
+const prefixIconClick = (e: MouseEvent) => {
+  console.log('YYDS-prefixIconClick');
+  focus();
+  emit('prefixIconClick', e);
+}
+const suffixIconClick = (e: MouseEvent) => {
+  console.log('YYDS-suffixIconClick');
+  focus();
+  emit('suffixIconClick', e);
+}
 </script>
 
 <script lang="ts">
